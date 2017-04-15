@@ -19,6 +19,7 @@ source $devops_prj_path/base.sh
 function run() {
     local data_path="/opt/data/$app"
     ensure_dir "$data_path"
+    ensure_permissions "$data_path"
 
     args="$args -p 139:139 -p 445:445 -p 137:137 -p 138:138"
     args="$args -v $data_path:/share"

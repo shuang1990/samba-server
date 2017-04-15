@@ -21,6 +21,12 @@ function ensure_dir() {
     fi
 }
 
+function ensure_permissions(){
+    if [  -d $1 -a ! "$(ls $1)" ];then
+        run_cmd "chmod -R 777 $1"
+    fi
+}
+
 function stop_container() {
     container_name=$1
     cmd="docker ps -a -f name='^/$container_name$' | grep '$container_name' | awk '{print \$1}' | xargs -I {} docker rm -f --volumes {}"
