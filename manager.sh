@@ -10,8 +10,8 @@ devops_prj_path="$prj_path/devops"
 samba_image=dperson/samba
 samba_container=samba-server
 app=samba
-user=docker
-passwd=123qwe
+user=guest
+passwd=happycoding
 
 base_do_init=0
 source $devops_prj_path/base.sh
