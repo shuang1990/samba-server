@@ -22,7 +22,7 @@ function ensure_dir() {
 }
 
 function ensure_permissions(){
-    if [ ! -d $1 ];then
+    if [  -d $1 -a ! "$(ls $1)" ];then
         run_cmd "chmod -R 777 $1"
     fi
 }
